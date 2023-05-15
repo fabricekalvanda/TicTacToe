@@ -14,6 +14,7 @@
 		3F9D824B2A12D75D0050D476 /* TicTacToeTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F9D824A2A12D75D0050D476 /* TicTacToeTests.swift */; };
 		3F9D82552A12D75D0050D476 /* TicTacToeUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F9D82542A12D75D0050D476 /* TicTacToeUITests.swift */; };
 		3F9D82572A12D75D0050D476 /* TicTacToeUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F9D82562A12D75D0050D476 /* TicTacToeUITestsLaunchTests.swift */; };
+		3F9D82642A12DC150050D476 /* Model.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F9D82632A12DC150050D476 /* Model.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -44,6 +45,7 @@
 		3F9D82502A12D75D0050D476 /* TicTacToeUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = TicTacToeUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		3F9D82542A12D75D0050D476 /* TicTacToeUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TicTacToeUITests.swift; sourceTree = "<group>"; };
 		3F9D82562A12D75D0050D476 /* TicTacToeUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TicTacToeUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		3F9D82632A12DC150050D476 /* Model.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Model.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -98,6 +100,7 @@
 				3F9D823B2A12D75B0050D476 /* ContentView.swift */,
 				3F9D823D2A12D75C0050D476 /* Assets.xcassets */,
 				3F9D823F2A12D75C0050D476 /* Preview Content */,
+				3F9D82632A12DC150050D476 /* Model.swift */,
 			);
 			path = TicTacToe;
 			sourceTree = "<group>";
@@ -257,6 +260,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3F9D82642A12DC150050D476 /* Model.swift in Sources */,
 				3F9D823C2A12D75B0050D476 /* ContentView.swift in Sources */,
 				3F9D823A2A12D75B0050D476 /* TicTacToeApp.swift in Sources */,
 			);
