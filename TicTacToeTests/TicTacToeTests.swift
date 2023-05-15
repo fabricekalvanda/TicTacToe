@@ -32,5 +32,9 @@ final class TicTacToeTests: XCTestCase {
             // Put the code you want to measure the time of here.
         }
     }
+    
+    func test_initialValue_NineCells(){
+        let ticModel = TicModel()
+    }
 
 }
