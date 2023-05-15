@@ -14,12 +14,16 @@ enum cell: String {
 }
 
 struct TicModel{
-    private var _grid: [cell]
+    private var _grid: [Cell]
     
     init(){
         _grid = []
         for _ in 0..<9 {
-            _grid.append(cell.x)
+            _grid.append(Cell.b)
         }
+    }
+    
+    var grid: [Cell]{
+        get { _grid }
     }
 }

@@ -8,7 +8,19 @@
 import XCTest
 @testable import TicTacToe
 
-final class TicTacToeTests: XCTestCase {
+final class TicViewModelTests: XCTestCase {
+    
+    func test_initialValue_nineCells(){
+        let ticViewModel = TicViewModel()
+        
+        XCTAssertEqual(ticViewModel.grid.count, 9)
+    }
+    
+    func test_initialValue_NineBlankCells(){
+        let ticViewModel = TicViewModel()
+        
+        XCTAssertEqual((ticViewModel.grid.filter{ $0 == Cell.b }.count), 9)
+    }
 
     override func setUpWithError() throws {
         // Put setup code here. This method is called before the invocation of each test method in the class.
@@ -32,11 +44,4 @@ final class TicTacToeTests: XCTestCase {
             // Put the code you want to measure the time of here.
         }
     }
-    
-    func test_initialValue_NineCells(){
-        let ticModel = TicModel()
-        
-        XCTAssertEqual(ticModel.grid.count, 9)
-    }
-
 }
