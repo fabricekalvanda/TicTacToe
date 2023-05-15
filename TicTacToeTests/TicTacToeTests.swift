@@ -35,6 +35,8 @@ final class TicTacToeTests: XCTestCase {
     
     func test_initialValue_NineCells(){
         let ticModel = TicModel()
+        
+        XCTAssertEqual(ticModel.grid.count, 9)
     }
 
 }
