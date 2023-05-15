@@ -9,12 +9,12 @@ import Foundation
 
 class TicViewModel: ObservableObject {
     @Published private var ticModel: TicModel
-    
-    init(){
+
+    init() {
         ticModel = TicModel()
     }
     
-    var grid: [cell] {
-        get {ticModel.grid}
+    var grid: [Cell] {
+        get { ticModel.grid }
     }
 }

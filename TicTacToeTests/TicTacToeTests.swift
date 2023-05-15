@@ -8,20 +8,8 @@
 import XCTest
 @testable import TicTacToe
 
-final class TicViewModelTests: XCTestCase {
-    
-    func test_initialValue_nineCells(){
-        let ticViewModel = TicViewModel()
-        
-        XCTAssertEqual(ticViewModel.grid.count, 9)
-    }
-    
-    func test_initialValue_NineBlankCells(){
-        let ticViewModel = TicViewModel()
-        
-        XCTAssertEqual((ticViewModel.grid.filter{ $0 == Cell.b }.count), 9)
-    }
-    
+class TDD_TicTacToeTests: XCTestCase {
+
     override func setUpWithError() throws {
         // Put setup code here. This method is called before the invocation of each test method in the class.
     }
@@ -29,15 +17,50 @@ final class TicViewModelTests: XCTestCase {
     override func tearDownWithError() throws {
         // Put teardown code here. This method is called after the invocation of each test method in the class.
     }
-
-    func testExample() throws {
-        // This is an example of a functional test case.
-        // Use XCTAssert and related functions to verify your tests produce the correct results.
-        // Any test you write for XCTest can be annotated as throws and async.
-        // Mark your test throws to produce an unexpected failure when your test encounters an uncaught error.
-        // Mark your test async to allow awaiting for asynchronous code to complete. Check the results with assertions afterwards.
+    
+    func testviewModel_initValueAndBlankCells() {
+        let ticViewModel = TicViewModel()
+        
+        XCTAssertEqual(ticViewModel.grid.count, 9)
+        XCTAssertEqual((ticViewModel.grid.filter { $0 == Cell.b }.count), 9)
+    }
+    
+    func test_setCell3toX() {
+        var ticModel = TicModel()
+        ticModel.setCell(n: 3, c: .x)
+        ticModel.setCell(n: 42, c: .x)
+        
+        XCTAssertTrue(ticModel.grid[3] == Cell.x)
+        XCTAssertTrue(ticModel.grid.contains { $0 == Cell.b } )
+    }
+    
+    func test_setCellTwiceIgnoreSecond() {
+        var ticModel = TicModel()
+        
+        ticModel.setCell(n: 3, c: .x)
+        ticModel.setCell(n: 3, c: .o)
+        
+        XCTAssertTrue(ticModel.grid[3] == Cell.x)
+        XCTAssertEqual((ticModel.grid.filter { $0 == Cell.x }.count), 1)
+        XCTAssertEqual((ticModel.grid.filter { $0 == Cell.b }.count), 8)
+    }
+    
+    func test_setCellBlankIgnored() {
+        var ticModel = TicModel()
+        
+        ticModel.setCell(n: 3, c: .x)
+        ticModel.setCell(n: 3, c: .b)
+        
+        XCTAssertTrue(ticModel.grid[3] == Cell.x)
+        XCTAssertEqual((ticModel.grid.filter { $0 == Cell.x }.count), 1)
+        XCTAssertEqual((ticModel.grid.filter { $0 == Cell.b }.count), 8)
     }
 
+    func test_isGridFullnewGameFalse() {
+        let ticModel = TicModel()
+        
+        XCTAssertFalse(ticModel.isGridFull)
+    }
     func testPerformanceExample() throws {
         // This is an example of a performance test case.
         self.measure {
